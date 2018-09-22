@@ -1,7 +1,7 @@
 # data-driven-vc
 Data-Driven-ViewController examples
 
-# This repository contains examples of data driven view controllers.
+## This repository contains examples of data driven view controllers.
 The main idea of data driven view controller is to separate view controller from any dependencies and provide only `needed` data to represent any possible view controller state.
 
 - [x] **Simple table view** - `Table.playground`\
@@ -44,8 +44,9 @@ Shows how to integrate data driven view controllers into `VIPER`
 <br>
 
 - [ ] **how to implement in `MVVM`**\
-Shows how to integrate data driven view controllers into `MVC`\
+Shows how to integrate data driven view controllers into `MVC`
 <br>
+
 - [ ] **how to implement in `MVC`**\
 Shows how to integrate data driven view controllers into `MVC`
 <br>
@@ -63,4 +64,4 @@ Shows behaviour driven tests (Quick/Nimble/SwiftyMock/Sourcery) example for pres
 <br>
 
 - [ ] **code generation**\
-Shows how to automatically generate data driven view controller tests\
+Shows how to automatically generate data driven view controller tests
