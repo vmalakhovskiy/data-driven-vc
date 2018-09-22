@@ -29,11 +29,10 @@ class MyViewController : UIViewController, UITableViewDelegate, UITableViewDataS
         static let initial = Props(elements: [])
     }
     
-    private var props: Props = .initial
-    
-    func render(props: Props) {
-        self.props = props
-        view.setNeedsLayout()
+    var props: Props = .initial {
+        didSet {
+            view.setNeedsLayout()
+        }
     }
     
     override func viewWillLayoutSubviews() {
@@ -91,4 +90,4 @@ func makeProps(from model: Model) -> MyViewController.Props.Element {
 
 let data = dataSource.map(makeProps)
 let props = MyViewController.Props(elements: data)
-vc.render(props: props)
+vc.props = props

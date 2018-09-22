@@ -13,22 +13,6 @@ class MyViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     private var state = State.initial
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return props.elements.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return props.elements[safe: component]?.count ?? 0
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return props.elements[safe: component]?[safe: row]?.title
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        props.elements[safe: component]?[safe: row]?.action()
-    }
-    
     struct Props: Equatable {
         let elements: [[Element]]
         let current: [Element]
@@ -45,38 +29,56 @@ class MyViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDat
         static let initial = Props(elements: [], current: [])
     }
     
-    private var props: Props = .initial
+    var props: Props = .initial {
+        didSet {
+            view.setNeedsLayout()
+        }
+    }
     
-    func render(props: Props) {
-        self.props = props
-        view.setNeedsLayout()
+    private lazy var picker: UIPickerView = {
+        let picker = UIPickerView()
+        picker.dataSource = self
+        picker.delegate = self
+        return picker
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .red
+        view.addSubview(picker)
+        picker.bindFrameToSuperviewBounds()
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        picker?.reloadAllComponents()
-        props.current.enumerated().forEach { data in
-            let (index, element) = data
-            props.elements[safe: index]
-                .flatMap { $0.index(where: { $0 == element }) }
-                .map { ($0, index) }
-                .map { picker?.selectRow($0.0, inComponent: $0.1, animated: state == .initial) }
+        picker.reloadAllComponents()
+        if state == .initial {
+            props.current.enumerated().forEach { data in
+                let (index, element) = data
+                props.elements[safe: index]
+                    .flatMap { $0.index(where: { $0 == element }) }
+                    .map { ($0, index, true) }
+                    .map(picker.selectRow)
+            }
         }
-        state = .nonInitial
     }
     
-    private var picker: UIPickerView?
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return props.elements.count
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .red
-        
-        picker = UIPickerView()
-        picker?.dataSource = self
-        picker?.delegate = self
-        picker.map(view.addSubview)
-        picker?.bindFrameToSuperviewBounds()
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return props.elements[safe: component]?.count ?? 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return props.elements[safe: component]?[safe: row]?.title
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        state = .nonInitial
+        props.elements[safe: component]?[safe: row]?.action()
     }
 }
 
@@ -111,7 +113,7 @@ private func makeInchProp(from value: Int) -> MyViewController.Props.Element {
             let measure = Measurement<UnitLength>(value: Double(value), unit: .inches)
             currentInch = measure
             refresh()
-    }
+        }
     )
 }
 
@@ -122,7 +124,7 @@ private func makeFootProp(from value: Int) -> MyViewController.Props.Element {
             let measure = Measurement<UnitLength>(value: Double(value), unit: .feet)
             currentFeet = measure
             refresh()
-    }
+        }
     )
 }
 
@@ -132,7 +134,7 @@ private func makeCentimeterProp(from value: Int) -> MyViewController.Props.Eleme
         action: {
             let measure = Measurement<UnitLength>(value: Double(value), unit: .centimeters)
             print(measure)
-    }
+        }
     )
 }
 
@@ -151,7 +153,7 @@ func refresh() {
             makeInchProp(from: mapInchToInt(currentInch))
         ]
     )
-    vc.render(props: props)
+    vc.props = props
     print(currentFeet)
     print(currentInch)
 }
