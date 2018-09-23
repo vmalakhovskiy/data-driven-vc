@@ -72,7 +72,7 @@ func reload() {
                 UIImage(named: "dog2")),
         ]
         let data = rawData.map(MyViewController.Props.Data.init)
-        vc.render(props: MyViewController.Props(data: data))
+        vc.props = MyViewController.Props(data: data)
         load()
     }
 }

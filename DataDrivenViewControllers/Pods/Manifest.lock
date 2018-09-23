@@ -1,0 +1,38 @@
+PODS:
+  - Nimble (7.1.3)
+  - Quick (1.3.1)
+  - ReactiveCocoa (8.0.0):
+    - ReactiveSwift (~> 4.0)
+  - ReactiveSwift (4.0.0):
+    - Result (~> 4.0)
+  - Result (4.0.0)
+  - SwiftyMock (0.2.3):
+    - SwiftyMock/Core (= 0.2.3)
+  - SwiftyMock/Core (0.2.3)
+
+DEPENDENCIES:
+  - Nimble
+  - Quick
+  - ReactiveCocoa
+  - SwiftyMock
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Nimble
+    - Quick
+    - ReactiveCocoa
+    - ReactiveSwift
+    - Result
+    - SwiftyMock
+
+SPEC CHECKSUMS:
+  Nimble: 2839b01d1b31f6a6a7777a221f0d91cf52e8e27b
+  Quick: d17304d58d0d169dd0bd1c6e5c28e3318de32a1a
+  ReactiveCocoa: 87cb64d78424d749a0bbfd9b07e4825e8d834066
+  ReactiveSwift: a2bb9ace428a109e9c0209615645d9d286c8c433
+  Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
+  SwiftyMock: 26d649bbf320ede90196b40129552ef719863043
+
+PODFILE CHECKSUM: 9e7794fce3cc723da9729f88bcce16f761699043
+
+COCOAPODS: 1.5.3

@@ -1,0 +1,6 @@
+framework module SwiftyMock {
+  umbrella header "SwiftyMock-umbrella.h"
+
+  export *
+  module * { export * }
+}

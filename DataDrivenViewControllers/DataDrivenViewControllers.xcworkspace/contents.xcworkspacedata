@@ -4,4 +4,10 @@
    <FileRef
       location = "container:DataDrivenViewControllers.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DataDrivenViewControllers.xcodeproj">
+   </FileRef>
 </Workspace>

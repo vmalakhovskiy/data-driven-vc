@@ -52,7 +52,7 @@ public func prepareForLiveView<VC: UIViewController>(
     scale: CGFloat = 1.0,
     isPortrait: Bool = true,
     viewController: VC
-    ) -> (UIWindow, VC) {
+) -> (UIWindow, VC) {
     let size = CGSize(width: screenType.rawValue.width * scale, height: screenType.rawValue.height * scale)
     let window = UIWindow(frame: CGRect(origin: .zero, size: isPortrait ? size : CGSize(width: size.height, height: size.width)))
     window.rootViewController = viewController

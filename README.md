@@ -25,16 +25,16 @@ Shows how to organize view controller that can represent multiple states - loadi
 Shows how to organize view controller that stays highly responsive during frequent data updates.
 <br>
 
-- [ ] **comparison with `MVVM`**\
-Shows view presenter communication organization differences between `MVVM` and data driven view controller (REDUX like)
+- [x] **comparison with `MVVM`**\
+Shows plain view and view-model communication organization in `MVVM`
 <br>
 
 - [ ] **comparison `VIPER`**\
-Shows view presenter communication organization differences between `VIPER` and data driven view controller (REDUX like)
+Shows plain view and presenter communication organization in `VIPER`
 <br>
 
 - [ ] **comparison `MVC`**\
-Shows view presenter communication organization differences between `MVC` and data driven view controller (REDUX like)
+Shows plain view-controller-model communication organization in `MVC`
 <br>
 
 - [ ] **how to implement in `VIPER`**\
