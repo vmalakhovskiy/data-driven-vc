@@ -41,7 +41,7 @@ Shows plain view-controller-model communication organization in `MVC`
 Shows how to integrate data driven view controllers into `VIPER`
 <br>
 
-- [ ] **how to implement in `MVVM`**\
+- [x] **how to implement in `MVVM`** - `DataDrivenMVVM.playground`\
 Shows how to integrate data driven view controllers into `MVC`
 <br>
 

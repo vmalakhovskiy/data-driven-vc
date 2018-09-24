@@ -67,6 +67,7 @@
 		475B26892150A6C100A29315 /* PrepareForLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareForLiveView.swift; sourceTree = "<group>"; };
 		475B268B2150A8F300A29315 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		47DED81621567DA000CFD247 /* PlainMVVM.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PlainMVVM.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6E58D09C2159180700FD3984 /* DataDrivenMVVM.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DataDrivenMVVM.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		91EE98446685840B9F63CC8C /* Pods_DataDrivenViewControllers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataDrivenViewControllers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8278848E4B1CF6937B3DD07 /* Pods-DataDrivenViewControllersUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataDrivenViewControllersUI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DataDrivenViewControllersUI/Pods-DataDrivenViewControllersUI.debug.xcconfig"; sourceTree = "<group>"; };
 		D8AA7DD2B5DDB50FC49A90B4 /* Pods-DataDrivenViewControllersUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataDrivenViewControllersUI.release.xcconfig"; path = "Pods/Target Support Files/Pods-DataDrivenViewControllersUI/Pods-DataDrivenViewControllersUI.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 		471AF9D62150A455007F8707 = {
 			isa = PBXGroup;
 			children = (
+				6E58D09C2159180700FD3984 /* DataDrivenMVVM.playground */,
 				47DED81621567DA000CFD247 /* PlainMVVM.playground */,
 				4738C5BC2153498E00442CC2 /* HighLoad.playground */,
 				473AF317215207FD00F42AF2 /* Enum.playground */,

@@ -2,12 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:DataDrivenViewControllers.xcodeproj">
+      location = "group:DataDrivenViewControllers.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:DataDrivenViewControllers.xcodeproj">
    </FileRef>
 </Workspace>
