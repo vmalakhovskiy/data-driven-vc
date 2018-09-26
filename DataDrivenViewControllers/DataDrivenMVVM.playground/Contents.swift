@@ -30,28 +30,30 @@ protocol ViewModel {
 }
 
 final class ViewModelImpl: ViewModel {
+    lazy var data = Property<ViewModelData>(capturing: mData)
     private lazy var mData: MutableProperty<ViewModelData> = {
         return MutableProperty<ViewModelData>(.initial { [weak self] in
             self?.mData.value = .loading
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-                self?.mData.value = .error(
-                    ViewModelData.Error(
-                        description: "no users",
-                        action: {
-                            self?.mData.value = .loading
-                            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-                                self?.mData.value = .users([
-                                    ViewModelData.User(name: "1", age: "2", action: { print("selected user name 1 age 2") })
-                                ])
-                            }
-                        }
-                    )
-                )
+                if let newData = (self?.makeErrorData()).map(ViewModelData.error) {
+                    self?.mData.value = newData
+                }
             }
         })
     }()
-    var data: Property<ViewModelData> {
-        return Property(mData)
+    
+    private func makeErrorData() -> ViewModelData.Error {
+        return ViewModelData.Error(
+            description: "no users",
+            action: { [weak self] in
+                self?.mData.value = .loading
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+                    self?.mData.value = .users([
+                        ViewModelData.User(name: "1", age: "2", action: { print("selected user name 1 age 2") })
+                    ])
+                }
+            }
+        )
     }
 }
 

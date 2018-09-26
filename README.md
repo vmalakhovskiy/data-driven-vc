@@ -29,8 +29,8 @@ Shows how to organize view controller that stays highly responsive during freque
 Shows plain view and view-model communication organization in `MVVM`
 <br>
 
-- [ ] **`VIPER` example** - `PlainVIPER.playground`\
-Shows plain view and presenter communication organization in `VIPER`
+- [x] **`VIPER` example** - `PlainVIPER.playground`\
+Shows plain view/presenter/data display manager communication organization in `VIPER`
 <br>
 
 - [ ] **`MVC` example** - `PlainMVC.playground`\

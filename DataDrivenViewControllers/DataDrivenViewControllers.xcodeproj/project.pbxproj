@@ -66,6 +66,7 @@
 		475B26802150A6A700A29315 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		475B26892150A6C100A29315 /* PrepareForLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareForLiveView.swift; sourceTree = "<group>"; };
 		475B268B2150A8F300A29315 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		47BF02D3215B35DA00B8CA7A /* PlainVIPER.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PlainVIPER.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		47DED81621567DA000CFD247 /* PlainMVVM.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PlainMVVM.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6E58D09C2159180700FD3984 /* DataDrivenMVVM.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DataDrivenMVVM.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		91EE98446685840B9F63CC8C /* Pods_DataDrivenViewControllers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataDrivenViewControllers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +98,7 @@
 		471AF9D62150A455007F8707 = {
 			isa = PBXGroup;
 			children = (
+				47BF02D3215B35DA00B8CA7A /* PlainVIPER.playground */,
 				6E58D09C2159180700FD3984 /* DataDrivenMVVM.playground */,
 				47DED81621567DA000CFD247 /* PlainMVVM.playground */,
 				4738C5BC2153498E00442CC2 /* HighLoad.playground */,
