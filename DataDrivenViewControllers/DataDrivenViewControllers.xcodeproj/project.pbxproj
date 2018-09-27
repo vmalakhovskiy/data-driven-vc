@@ -19,6 +19,7 @@
 		475B26852150A6A700A29315 /* DataDrivenViewControllersUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 475B267D2150A6A700A29315 /* DataDrivenViewControllersUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		475B268A2150A6C100A29315 /* PrepareForLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475B26892150A6C100A29315 /* PrepareForLiveView.swift */; };
 		475B268C2150A8F300A29315 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475B268B2150A8F300A29315 /* UIViewExtensions.swift */; };
+		47BF02D6215C842F00B8CA7A /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BF02D5215C842F00B8CA7A /* Observable.swift */; };
 		C2C399110298D3953E68104A /* Pods_DataDrivenViewControllersUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3064EEAFEDAD8D29C5E8C16 /* Pods_DataDrivenViewControllersUI.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,9 @@
 		475B26892150A6C100A29315 /* PrepareForLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareForLiveView.swift; sourceTree = "<group>"; };
 		475B268B2150A8F300A29315 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		47BF02D3215B35DA00B8CA7A /* PlainVIPER.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PlainVIPER.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		47BF02D4215C834E00B8CA7A /* DataDrivenVIPERv1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DataDrivenVIPERv1.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		47BF02D5215C842F00B8CA7A /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		47BF02D7215C8CB400B8CA7A /* DataDrivenVIPERv2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DataDrivenVIPERv2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		47DED81621567DA000CFD247 /* PlainMVVM.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PlainMVVM.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6E58D09C2159180700FD3984 /* DataDrivenMVVM.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DataDrivenMVVM.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		91EE98446685840B9F63CC8C /* Pods_DataDrivenViewControllers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataDrivenViewControllers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +102,8 @@
 		471AF9D62150A455007F8707 = {
 			isa = PBXGroup;
 			children = (
+				47BF02D7215C8CB400B8CA7A /* DataDrivenVIPERv2.playground */,
+				47BF02D4215C834E00B8CA7A /* DataDrivenVIPERv1.playground */,
 				47BF02D3215B35DA00B8CA7A /* PlainVIPER.playground */,
 				6E58D09C2159180700FD3984 /* DataDrivenMVVM.playground */,
 				47DED81621567DA000CFD247 /* PlainMVVM.playground */,
@@ -154,6 +160,7 @@
 				475B268B2150A8F300A29315 /* UIViewExtensions.swift */,
 				470A1D432150B30B0010BA9B /* CollectionExtenesions.swift */,
 				473AF3152151FC0800F42AF2 /* Ring.swift */,
+				47BF02D5215C842F00B8CA7A /* Observable.swift */,
 			);
 			path = DataDrivenViewControllersUI;
 			sourceTree = "<group>";
@@ -313,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				475B268C2150A8F300A29315 /* UIViewExtensions.swift in Sources */,
+				47BF02D6215C842F00B8CA7A /* Observable.swift in Sources */,
 				473AF3162151FC0800F42AF2 /* Ring.swift in Sources */,
 				470A1D442150B30B0010BA9B /* CollectionExtenesions.swift in Sources */,
 				475B268A2150A6C100A29315 /* PrepareForLiveView.swift in Sources */,

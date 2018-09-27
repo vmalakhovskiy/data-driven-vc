@@ -13,8 +13,6 @@ protocol ViewInput: AnyObject {
 }
 
 protocol ViewOutput {
-    var view: ViewInput? { get set }
-    
     func viewIsReady()
     func dataDidSelect(with data: Data)
 }

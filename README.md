@@ -37,8 +37,12 @@ Shows plain view/presenter/data display manager communication organization in `V
 Shows plain view-controller-model communication organization in `MVC`
 <br>
 
-- [ ] **how to implement in `VIPER`**\
-Shows how to integrate data driven view controllers into `VIPER`
+- [x] **how to implement in imperative `VIPER`** - `DataDrivenVIPERv1.playground`\
+Shows how to integrate data driven view controllers into `VIPER` using imperative approach, so presenter has viewOutput reference
+<br>
+
+- [x] **how to implement in `VIPER` user observer pattern** - `DataDrivenVIPERv2.playground`\
+Shows how to integrate data driven view controllers into `VIPER`, so presenter has only viewModel property, and view controller observes it
 <br>
 
 - [x] **how to implement in `MVVM`** - `DataDrivenMVVM.playground`\
