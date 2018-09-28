@@ -6,13 +6,30 @@
 	<dict>
 		<key>DataDrivenViewControllers.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>0</integer>
 		</dict>
 		<key>DataDrivenViewControllersUI.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>471AF9DE2150A455007F8707</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>475B267C2150A6A700A29315</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

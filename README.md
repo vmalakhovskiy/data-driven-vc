@@ -33,7 +33,7 @@ Shows plain view and view-model communication organization in `MVVM`
 Shows plain view/presenter/data display manager communication organization in `VIPER`
 <br>
 
-- [ ] **`MVC` example** - `PlainMVC.playground`\
+- [x] **`MVC` example** - `PlainMVC.playground`\
 Shows plain view-controller-model communication organization in `MVC`
 <br>
 
