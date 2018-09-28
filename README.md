@@ -53,7 +53,7 @@ Shows how to integrate data driven view controllers into `MVC`
 Shows how to integrate data driven view controllers into `MVC`
 <br>
 
-- [x] **lenses/prisms** - `LensPrism.playground`\ WIP
+- [x] **lenses/prisms** - `LensPrism.playground` WIP\ 
 Shows how lenses and prisms can decrease boilerplate code, and increase understanding of production/test code
 <br>
 
