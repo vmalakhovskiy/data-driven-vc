@@ -49,7 +49,7 @@ Shows how to integrate data driven view controllers into `VIPER`, so presenter h
 Shows how to integrate data driven view controllers into `MVC`
 <br>
 
-- [ ] **how to implement in `MVC`**\
+- [x] **how to implement in `MVC`** - `DataDrivenMVC.playground`\
 Shows how to integrate data driven view controllers into `MVC`
 <br>
 
