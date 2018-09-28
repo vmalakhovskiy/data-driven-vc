@@ -74,6 +74,7 @@
 		47DED81621567DA000CFD247 /* PlainMVVM.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PlainMVVM.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6E3B1D04215E52200046ED10 /* PlainMVC.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PlainMVC.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6E3B1D0B215E5FFB0046ED10 /* DataDrivenMVC.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DataDrivenMVC.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6E3B1D0C215E6AE00046ED10 /* DataDrivenViewControllerSpec.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DataDrivenViewControllerSpec.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6E58D09C2159180700FD3984 /* DataDrivenMVVM.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DataDrivenMVVM.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		91EE98446685840B9F63CC8C /* Pods_DataDrivenViewControllers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataDrivenViewControllers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8278848E4B1CF6937B3DD07 /* Pods-DataDrivenViewControllersUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataDrivenViewControllersUI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DataDrivenViewControllersUI/Pods-DataDrivenViewControllersUI.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +105,7 @@
 		471AF9D62150A455007F8707 = {
 			isa = PBXGroup;
 			children = (
+				6E3B1D0C215E6AE00046ED10 /* DataDrivenViewControllerSpec.playground */,
 				6E3B1D0B215E5FFB0046ED10 /* DataDrivenMVC.playground */,
 				6E3B1D04215E52200046ED10 /* PlainMVC.playground */,
 				47BF02D7215C8CB400B8CA7A /* DataDrivenVIPERv2.playground */,

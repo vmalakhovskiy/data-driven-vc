@@ -13,6 +13,7 @@ class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         struct Loaded {
             let title: String
+            let onSelect: () -> ()
         }
     }
     
@@ -22,10 +23,10 @@ class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
     }
     
-    private var tableView: UITableView?
-    private var loadingView: UIActivityIndicatorView?
-    private var errorLabel: UILabel?
-    private var reloadButton: UIButton?
+   var tableView: UITableView?
+   var loadingView: UIActivityIndicatorView?
+   var errorLabel: UILabel?
+   var reloadButton: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,28 +37,16 @@ class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         tableView?.dataSource = self
         tableView?.delegate = self
         tableView.map(view.addSubview)
-        tableView?.bindFrameToSuperviewBounds()
-
+        
         loadingView = UIActivityIndicatorView(style: .gray)
         loadingView?.hidesWhenStopped = true
-        loadingView?.translatesAutoresizingMaskIntoConstraints = false
         loadingView.map(view.addSubview)
-        loadingView?.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        loadingView?.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-
+        
         errorLabel = UILabel()
         errorLabel.map(view.addSubview)
-        errorLabel?.translatesAutoresizingMaskIntoConstraints = false
-        errorLabel?.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        errorLabel?.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
 
         reloadButton = UIButton(type: .custom)
-        reloadButton?.setTitle("Reload", for: .normal)
-        reloadButton?.setTitleColor(.blue, for: .normal)
         reloadButton.map(view.addSubview)
-        reloadButton?.translatesAutoresizingMaskIntoConstraints = false
-        reloadButton?.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        reloadButton?.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 50).isActive = true
         reloadButton?.addTarget(self, action: #selector(onReloadButtonDidTap), for: .touchUpInside)
     }
     
@@ -113,22 +102,73 @@ class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
         return UITableViewCell()
     }
-}
-
-let vc = MyViewController()
-PlaygroundPage.current.liveView = prepareForLiveView(screenType: .iPhoneSE, viewController: vc).0
-
-vc.props = .loading
-
-DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-    vc.props = .error("no network connection") {
-        vc.props = .loading
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-            vc.props = .loaded([
-                MyViewController.Props.Loaded(title: "1"),
-                MyViewController.Props.Loaded(title: "2")
-            ])
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if case .loaded(let data) = props, let model = data[safe: indexPath.row] {
+            model.onSelect()
         }
     }
 }
+
+import Quick
+import Nimble
+
+class MyViewControllerSpec: QuickSpec {
+    override func spec() {
+        describe("MyViewController") {
+            var sut: MyViewController!
+            
+            beforeEach {
+                sut = MyViewController()
+                _ = sut.view
+                sut.viewDidLoad()
+            }
+            
+            describe("when initialized") {
+                it("should have all outlets sut up") {
+                    expect(sut.tableView).toNot(beNil())
+                    expect(sut.loadingView).toNot(beNil())
+                    expect(sut.errorLabel).toNot(beNil())
+                    expect(sut.reloadButton).toNot(beNil())
+                }
+            }
+            
+            describe("when selecting table view cell") {
+                var correctActionCalled: Bool!
+                
+                beforeEach {
+                    correctActionCalled = false
+                    sut.props = .loaded([
+                        MyViewController.Props.Loaded(title: String(), onSelect: {}),
+                        MyViewController.Props.Loaded(title: String(), onSelect: { correctActionCalled = true })
+                    ])
+                }
+                
+                it("should call correct action") {
+                    let indexPath = IndexPath(row: 1, section: 0)
+                    sut.tableView?.selectRow(at: indexPath, animated: false, scrollPosition: .middle)
+                    sut.tableView(sut.tableView!, didSelectRowAt: indexPath)
+                    
+                    expect(correctActionCalled).to(beTruthy())
+                }
+            }
+            
+            describe("when tapping on reload button") {
+                var correctActionCalled: Bool!
+                
+                beforeEach {
+                    correctActionCalled = false
+                    sut.props = .error("", { correctActionCalled = true })
+                }
+                
+                it("should call correct action") {
+                    sut.reloadButton?.sendActions(for: .touchUpInside)
+                    
+                    expect(correctActionCalled).to(beTruthy())
+                }
+            }
+        }
+    }
+}
+
+MyViewControllerSpec.defaultTestSuite.run()

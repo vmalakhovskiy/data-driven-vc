@@ -57,7 +57,7 @@ Shows how to integrate data driven view controllers into `MVC`
 Shows how lenses and prisms can decrease boilerplate code, and increase understanding of production/test code
 <br>
 
-- [ ] **data driven view controller tests**\
+- [x] **data driven view controller tests**\
 Shows behaviour driven tests (Quick/Nimble/SwiftyMock/Sourcery) example for table view controller
 <br>
 
