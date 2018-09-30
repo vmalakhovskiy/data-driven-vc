@@ -21,8 +21,8 @@ Shows how to organize view controller with animation and provide smooth experien
 Shows how to organize view controller that can represent multiple states - loading/error(description, reload button)/success(show data).
 <br>
 
-- [x] **High-loaded screen - smooth scroll** - `HighLoad.playground` WIP\
-Shows how to organize view controller that stays highly responsive during frequent data updates.
+- [x] **View output example** - `Validation.playground`\
+Shows how to organize view output.
 <br>
 
 - [x] **`MVVM` example** - `PlainMVVM.playground`\
@@ -53,7 +53,7 @@ Shows how to integrate data driven view controllers into `MVC`
 Shows how to integrate data driven view controllers into `MVC`
 <br>
 
-- [x] **lenses/prisms** - `LensPrism.playground` WIP\ 
+- [x] **lenses/prisms** - `LensPrism.playground` WIP \ 
 Shows how lenses and prisms can decrease boilerplate code, and increase understanding of production/test code
 <br>
 
