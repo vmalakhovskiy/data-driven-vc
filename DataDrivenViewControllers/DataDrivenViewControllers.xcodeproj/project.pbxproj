@@ -76,9 +76,6 @@
 		47DED81621567DA000CFD247 /* 6. PlainMVVM.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "6. PlainMVVM.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6E3B1D04215E52200046ED10 /* 11. PlainMVC.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "11. PlainMVC.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6E3B1D0B215E5FFB0046ED10 /* 12. DataDrivenMVC.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "12. DataDrivenMVC.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		6E3B1D0C215E6AE00046ED10 /* 13. DataDrivenViewControllerSpec.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "13. DataDrivenViewControllerSpec.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		6E3B1D0D215E77AC0046ED10 /* 14. PresenterSpec.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "14. PresenterSpec.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		6E3B1D0E215E7E1A0046ED10 /* 15. LensPrism.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "15. LensPrism.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6E3B1D0F215E7E240046ED10 /* Lens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lens.swift; sourceTree = "<group>"; };
 		6E3B1D11215E7E410046ED10 /* Prism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prism.swift; sourceTree = "<group>"; };
 		6E58D09C2159180700FD3984 /* 7. DataDrivenMVVM.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "7. DataDrivenMVVM.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -123,9 +120,6 @@
 				47BF02D7215C8CB400B8CA7A /* 10. DataDrivenVIPERv2.playground */,
 				6E3B1D04215E52200046ED10 /* 11. PlainMVC.playground */,
 				6E3B1D0B215E5FFB0046ED10 /* 12. DataDrivenMVC.playground */,
-				6E3B1D0C215E6AE00046ED10 /* 13. DataDrivenViewControllerSpec.playground */,
-				6E3B1D0D215E77AC0046ED10 /* 14. PresenterSpec.playground */,
-				6E3B1D0E215E7E1A0046ED10 /* 15. LensPrism.playground */,
 				471AF9E12150A455007F8707 /* DataDrivenViewControllers */,
 				475B267E2150A6A700A29315 /* DataDrivenViewControllersUI */,
 				471AF9E02150A455007F8707 /* Products */,

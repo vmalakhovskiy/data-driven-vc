@@ -4,63 +4,51 @@ Data-Driven-ViewController examples
 ## This repository contains examples of data driven view controllers.
 The main idea of data driven view controller is to separate view controller from any dependencies and provide only `needed` data to represent any possible view controller state.
 
-- [x] **Simple table view** - `Table.playground`\
+1. `Table.playground` - **Simple table view**\
 Shows how to organize view controller with table view with data and react on cell selection.
 <br>
 
-- [x] **Extendable picker view** - `Picker.playground`\
+2. `Picker.playground` - **Extendable picker view**\
 Shows how to organize view controller with multicomponent picker view and react on row selection.
 Also that example contains internal state, so controller doesn't need to relate on previous data to represent actual state.
 <br>
 
-- [x] **Animation during data updates** - `Animation.playground`\
+3. `Animation.playground` - **Animation during data updates**\
 Shows how to organize view controller with animation and provide smooth experience to user while controller stays constantly updating.
 <br>
 
-- [x] **Multi-state screen** - `Enum.playground`\
+4. `Enum.playground` - **Multi-state screen**\
 Shows how to organize view controller that can represent multiple states - loading/error(description, reload button)/success(show data).
 <br>
 
-- [x] **View output example** - `Validation.playground`\
+5. `Validation.playground` - **View output example**\
 Shows how to organize view output.
 <br>
 
-- [x] **`MVVM` example** - `PlainMVVM.playground`\
+6. `PlainMVVM.playground` - **`MVVM` example**\
 Shows plain view and view-model communication organization in `MVVM`
 <br>
 
-- [x] **`VIPER` example** - `PlainVIPER.playground`\
+7. `DataDrivenMVVM.playground` - **how to implement DDVC in `MVVM`**\
+Shows how to integrate data driven view controllers into `MVVM`
+<br>
+
+8. `PlainVIPER.playground` - **`VIPER` example**\
 Shows plain view/presenter/data display manager communication organization in `VIPER`
 <br>
 
-- [x] **`MVC` example** - `PlainMVC.playground`\
-Shows plain view-controller-model communication organization in `MVC`
-<br>
-
-- [x] **how to implement in imperative `VIPER`** - `DataDrivenVIPERv1.playground`\
+9. `DataDrivenVIPERv1.playground` - **how to implement DDVC in imperative `VIPER`**\
 Shows how to integrate data driven view controllers into `VIPER` using imperative approach, so presenter has viewOutput reference
 <br>
 
-- [x] **how to implement in `VIPER` user observer pattern** - `DataDrivenVIPERv2.playground`\
+10. `DataDrivenVIPERv2.playground` - **how to implement DDVC in `VIPER` using observer pattern**\
 Shows how to integrate data driven view controllers into `VIPER`, so presenter has only viewModel property, and view controller observes it
 <br>
 
-- [x] **how to implement in `MVVM`** - `DataDrivenMVVM.playground`\
+11. `PlainMVC.playground` - **`MVC` example**\
+Shows plain view-controller-model communication organization in `MVC`
+<br>
+
+12. `DataDrivenMVC.playground` - **how to implement in `MVC`**\
 Shows how to integrate data driven view controllers into `MVC`
-<br>
-
-- [x] **how to implement in `MVC`** - `DataDrivenMVC.playground`\
-Shows how to integrate data driven view controllers into `MVC`
-<br>
-
-- [x] **lenses/prisms** - `LensPrism.playground` WIP \ 
-Shows how lenses and prisms can decrease boilerplate code, and increase understanding of production/test code
-<br>
-
-- [x] **data driven view controller tests** - `DataDrivenViewControllerSpec.playground`\
-Shows behaviour driven tests (Quick/Nimble/SwiftyMock/Sourcery) example for table view controller
-<br>
-
-- [x] **presenter tests** - `PresenterSpec.playground`\
-Shows behaviour driven tests (Quick/Nimble/SwiftyMock/Sourcery) example for presenter/view-model that data-sources view controller
 <br>
