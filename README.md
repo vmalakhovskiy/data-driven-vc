@@ -4,6 +4,9 @@ Data-Driven-ViewController examples
 ## This repository contains examples of data driven view controllers.
 The main idea of data driven view controller is to separate view controller from any dependencies and provide only `needed` data to represent any possible view controller state.
 
+# Important note:
+Project contain 3-rd party dependencies, installed through cocoapods, so to make playgrounds work - please build `DataDrivenViewControllersUI` target.
+
 1. `Table.playground` - **Simple table view**\
 Shows how to organize view controller with table view with data and react on cell selection.
 <br>
