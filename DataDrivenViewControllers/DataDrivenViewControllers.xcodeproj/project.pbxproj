@@ -51,9 +51,6 @@
 
 /* Begin PBXFileReference section */
 		470A1D432150B30B0010BA9B /* CollectionExtenesions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtenesions.swift; sourceTree = "<group>"; };
-		470A1D452151F4770010BA9B /* 1. Table.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1. Table.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		470A1D462151F4770010BA9B /* 3. Animation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3. Animation.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		470A1D472151F4770010BA9B /* 2. Picker.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2. Picker.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		471AF9DF2150A455007F8707 /* DataDrivenViewControllers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataDrivenViewControllers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		471AF9E22150A455007F8707 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		471AF9E42150A455007F8707 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,24 +58,26 @@
 		471AF9E92150A457007F8707 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		471AF9EC2150A457007F8707 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		471AF9EE2150A457007F8707 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4738C5BC2153498E00442CC2 /* 5. Validation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "5. Validation.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		473AF3152151FC0800F42AF2 /* Ring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
-		473AF317215207FD00F42AF2 /* 4. Enum.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4. Enum.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		475B267D2150A6A700A29315 /* DataDrivenViewControllersUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataDrivenViewControllersUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		475B267F2150A6A700A29315 /* DataDrivenViewControllersUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataDrivenViewControllersUI.h; sourceTree = "<group>"; };
 		475B26802150A6A700A29315 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		475B26892150A6C100A29315 /* PrepareForLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareForLiveView.swift; sourceTree = "<group>"; };
 		475B268B2150A8F300A29315 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
-		47BF02D3215B35DA00B8CA7A /* 8. PlainVIPER.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "8. PlainVIPER.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		47BF02D4215C834E00B8CA7A /* 9. DataDrivenVIPERv1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "9. DataDrivenVIPERv1.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		47BF02D5215C842F00B8CA7A /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		47BF02D7215C8CB400B8CA7A /* 10. DataDrivenVIPERv2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "10. DataDrivenVIPERv2.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		47DED81621567DA000CFD247 /* 6. PlainMVVM.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "6. PlainMVVM.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		6E3B1D04215E52200046ED10 /* 11. PlainMVC.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "11. PlainMVC.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		6E3B1D0B215E5FFB0046ED10 /* 12. DataDrivenMVC.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "12. DataDrivenMVC.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6E3B1D0F215E7E240046ED10 /* Lens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lens.swift; sourceTree = "<group>"; };
 		6E3B1D11215E7E410046ED10 /* Prism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prism.swift; sourceTree = "<group>"; };
-		6E58D09C2159180700FD3984 /* 7. DataDrivenMVVM.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "7. DataDrivenMVVM.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6E7EC4DA2168D30100497AD4 /* 1. Simple Input.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1. Simple Input.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6E7EC4DB2168D30100497AD4 /* 6. DataDrivenMVVM.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "6. DataDrivenMVVM.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6E7EC4DC2168D30100497AD4 /* 4. Animation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4. Animation.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6E7EC4DD2168D30100497AD4 /* 11. DataDrivenMVC.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "11. DataDrivenMVC.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6E7EC4DE2168D30100497AD4 /* 2. Input + Validation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2. Input + Validation.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6E7EC4DF2168D30100497AD4 /* 7. PlainVIPER.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "7. PlainVIPER.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6E7EC4E02168D30100497AD4 /* 8. DataDrivenVIPERv1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "8. DataDrivenVIPERv1.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6E7EC4E12168D30100497AD4 /* 9. DataDrivenVIPERv2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "9. DataDrivenVIPERv2.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6E7EC4E22168D30100497AD4 /* 5. PlainMVVM.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "5. PlainMVVM.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6E7EC4E32168D30100497AD4 /* 10. PlainMVC.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "10. PlainMVC.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6E7EC4E42168D30100497AD4 /* 3. Multistate Screen.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3. Multistate Screen.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		91EE98446685840B9F63CC8C /* Pods_DataDrivenViewControllers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataDrivenViewControllers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8278848E4B1CF6937B3DD07 /* Pods-DataDrivenViewControllersUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataDrivenViewControllersUI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DataDrivenViewControllersUI/Pods-DataDrivenViewControllersUI.debug.xcconfig"; sourceTree = "<group>"; };
 		D8AA7DD2B5DDB50FC49A90B4 /* Pods-DataDrivenViewControllersUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataDrivenViewControllersUI.release.xcconfig"; path = "Pods/Target Support Files/Pods-DataDrivenViewControllersUI/Pods-DataDrivenViewControllersUI.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,18 +107,17 @@
 		471AF9D62150A455007F8707 = {
 			isa = PBXGroup;
 			children = (
-				470A1D452151F4770010BA9B /* 1. Table.playground */,
-				470A1D472151F4770010BA9B /* 2. Picker.playground */,
-				470A1D462151F4770010BA9B /* 3. Animation.playground */,
-				473AF317215207FD00F42AF2 /* 4. Enum.playground */,
-				4738C5BC2153498E00442CC2 /* 5. Validation.playground */,
-				47DED81621567DA000CFD247 /* 6. PlainMVVM.playground */,
-				6E58D09C2159180700FD3984 /* 7. DataDrivenMVVM.playground */,
-				47BF02D3215B35DA00B8CA7A /* 8. PlainVIPER.playground */,
-				47BF02D4215C834E00B8CA7A /* 9. DataDrivenVIPERv1.playground */,
-				47BF02D7215C8CB400B8CA7A /* 10. DataDrivenVIPERv2.playground */,
-				6E3B1D04215E52200046ED10 /* 11. PlainMVC.playground */,
-				6E3B1D0B215E5FFB0046ED10 /* 12. DataDrivenMVC.playground */,
+				6E7EC4DA2168D30100497AD4 /* 1. Simple Input.playground */,
+				6E7EC4DE2168D30100497AD4 /* 2. Input + Validation.playground */,
+				6E7EC4E42168D30100497AD4 /* 3. Multistate Screen.playground */,
+				6E7EC4DC2168D30100497AD4 /* 4. Animation.playground */,
+				6E7EC4E22168D30100497AD4 /* 5. PlainMVVM.playground */,
+				6E7EC4DB2168D30100497AD4 /* 6. DataDrivenMVVM.playground */,
+				6E7EC4DF2168D30100497AD4 /* 7. PlainVIPER.playground */,
+				6E7EC4E02168D30100497AD4 /* 8. DataDrivenVIPERv1.playground */,
+				6E7EC4E12168D30100497AD4 /* 9. DataDrivenVIPERv2.playground */,
+				6E7EC4E32168D30100497AD4 /* 10. PlainMVC.playground */,
+				6E7EC4DD2168D30100497AD4 /* 11. DataDrivenMVC.playground */,
 				471AF9E12150A455007F8707 /* DataDrivenViewControllers */,
 				475B267E2150A6A700A29315 /* DataDrivenViewControllersUI */,
 				471AF9E02150A455007F8707 /* Products */,

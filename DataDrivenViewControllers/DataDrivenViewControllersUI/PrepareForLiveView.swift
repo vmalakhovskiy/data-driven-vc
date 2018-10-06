@@ -48,15 +48,15 @@ public enum ScreenType: RawRepresentable {
 }
 
 public func prepareForLiveView<VC: UIViewController>(
-    screenType: ScreenType,
+    screenType: ScreenType = .iPhoneSE,
     scale: CGFloat = 1.0,
     isPortrait: Bool = true,
     viewController: VC
-) -> (UIWindow, VC) {
+) -> UIWindow {
     let size = CGSize(width: screenType.rawValue.width * scale, height: screenType.rawValue.height * scale)
     let window = UIWindow(frame: CGRect(origin: .zero, size: isPortrait ? size : CGSize(width: size.height, height: size.width)))
     window.rootViewController = viewController
     window.makeKeyAndVisible()
-    return (window, viewController)
+    return window
 }
 
