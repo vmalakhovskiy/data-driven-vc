@@ -66,7 +66,7 @@ class MyViewController : UIViewController {
 }
 
 let vc = MyViewController()
-PlaygroundPage.current.liveView = prepareForLiveView(screenType: .iPhoneSE, viewController: vc).0
+PlaygroundPage.current.liveView = prepareForLiveView(viewController: vc)
 
 let flow: [MyViewController.Props] = [
     .increase(5),

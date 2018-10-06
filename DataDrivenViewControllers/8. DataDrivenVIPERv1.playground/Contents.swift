@@ -178,4 +178,4 @@ let controller = MyViewController()
 let presenter = Presenter()
 controller.output = presenter
 presenter.view = controller
-PlaygroundPage.current.liveView = controller
+PlaygroundPage.current.liveView = prepareForLiveView(viewController: controller)

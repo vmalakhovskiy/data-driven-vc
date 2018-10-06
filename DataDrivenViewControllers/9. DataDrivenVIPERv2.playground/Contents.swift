@@ -2,12 +2,9 @@
 
 import UIKit
 import PlaygroundSupport
-import ReactiveSwift
-import ReactiveCocoa
-import Result
 import DataDrivenViewControllersUI
 
-enum ViewModelData {
+enum ViewModel {
     case initial(() -> ())
     case loading
     case users([User])
@@ -24,54 +21,52 @@ enum ViewModelData {
         let action: () -> ()
     }
 }
-    
-protocol ViewModel {
-    var data: Property<ViewModelData> { get }
+
+protocol ViewOutput {
+    var viewModel: Observable<ViewModel> { get }
 }
 
-final class ViewModelImpl: ViewModel {
-    lazy var data = Property<ViewModelData>(capturing: mData)
-    private lazy var mData: MutableProperty<ViewModelData> = {
-        return MutableProperty<ViewModelData>(.initial { [weak self] in
-            self?.mData.value = .loading
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-                if let newData = (self?.makeErrorData()).map(ViewModelData.error) {
-                    self?.mData.value = newData
-                }
-            }
-        })
-    }()
+class Presenter: ViewOutput {
+    private lazy var viewModelObserver = Observer<ViewModel>(
+        value: .initial { [weak self] in self?.populateViewModelWithError() }
+    )
+    lazy var viewModel: Observable<ViewModel> = viewModelObserver
     
-    private func makeErrorData() -> ViewModelData.Error {
-        return ViewModelData.Error(
-            description: "no users",
-            action: { [weak self] in
-                self?.mData.value = .loading
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-                    self?.mData.value = .users([
-                        ViewModelData.User(name: "1", age: "2", action: { print("selected user name 1 age 2") })
-                    ])
-                }
-            }
-        )
+    func populateViewModelWithError() {
+        viewModelObserver.update(with: .loading)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) { [weak self] in
+            self?.viewModelObserver.update(
+                with: .error(
+                    ViewModel.Error(
+                        description: "very bad",
+                        action: { self?.populateViewModelWithUsers() }
+                    )
+                )
+            )
+        }
+    }
+    
+    func populateViewModelWithUsers() {
+        viewModelObserver.update(with: .loading)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) { [weak self] in
+            self?.viewModelObserver.update(
+                with: .users([
+                    ViewModel.User(name: "vasya", age: "19.4", action: { print("performing some actions with vasya") }),
+                    ViewModel.User(name: "petya", age: "19.4", action: { print("performing some actions with petya") }),
+                    ViewModel.User(name: "kolya", age: "19.4", action: { print("performing some actions with kolya") }),
+                    ViewModel.User(name: "anton", age: "19.4", action: { print("performing some actions with anton") })
+                ])
+            )
+        }
     }
 }
 
-class MyViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MyViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     private var tableView: UITableView?
     private var loadingView: UIActivityIndicatorView?
     private var errorLabel: UILabel?
     private var reloadButton: UIButton?
-    private let viewModel: ViewModel
-    
-    init(viewModel: ViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    var output: ViewOutput!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,16 +101,25 @@ class MyViewController : UIViewController, UITableViewDelegate, UITableViewDataS
         reloadButton?.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 50).isActive = true
         reloadButton?.addTarget(self, action: #selector(onReloadButtonDidTap), for: .touchUpInside)
         
-        reactive.makeBindingTarget { (vc, _) in vc.view.setNeedsLayout() } <~ viewModel.data.producer.take(until: reactive.viewWillDisappear)
-        if case .initial(let action) = viewModel.data.value {
+        if case .initial(let action) = output.viewModel.value {
             action()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        output.viewModel.addObserver(self) { vc, _ in vc.view.setNeedsLayout() }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        output.viewModel.removeObserver(self)
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        switch viewModel.data.value {
+        switch output.viewModel.value {
         case .initial:
             tableView?.isHidden = true
             loadingView?.stopAnimating()
@@ -143,34 +147,39 @@ class MyViewController : UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     @objc func onReloadButtonDidTap() {
-        if case .error(let errorData) = viewModel.data.value {
+        if case .error(let errorData) = output.viewModel.value {
             errorData.action()
         }
     }
-        
+    
+    // MARK: UITableViewDataSource
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if case .users(let data) = viewModel.data.value {
+        if case .users(let data) = output.viewModel.value {
             return data.count
         }
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if case .users(let users) = viewModel.data.value, let data = users[safe: indexPath.row] {
+        if case .users(let users) = output.viewModel.value, let data = users[safe: indexPath.row] {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .value1, reuseIdentifier: "cell")
             cell.textLabel?.text = data.name
-            cell.detailTextLabel?.text = data.age
             return cell
         }
         return UITableViewCell()
     }
     
+    // MARK: UITableViewDelegate
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if case .users(let users) = viewModel.data.value, let data = users[safe: indexPath.row] {
+        if case .users(let users) = output.viewModel.value, let data = users[safe: indexPath.row] {
             data.action()
         }
     }
 }
 
-PlaygroundPage.current.liveView = prepareForLiveView(screenType: .iPhoneSE, viewController: MyViewController(viewModel: ViewModelImpl())).0
+let controller = MyViewController()
+controller.output = Presenter()
+PlaygroundPage.current.liveView = prepareForLiveView(viewController: controller)

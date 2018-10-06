@@ -146,4 +146,4 @@ controller.output = presenter
 controller.dataDisplayManager = dataDisplayManager
 presenter.view = controller
 dataDisplayManager.output = controller
-PlaygroundPage.current.liveView = controller
+PlaygroundPage.current.liveView = prepareForLiveView(viewController: controller)

@@ -38,7 +38,7 @@ class MyViewController : UIViewController {
     
     init(model: Model) {
         self.model = model
-        super.init(nibName: nil, bundle: Bundle.main)
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -208,5 +208,5 @@ class View: UIView, UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
 }
-// Present the view controller in the Live View window
-PlaygroundPage.current.liveView = MyViewController(model: Model())
+
+PlaygroundPage.current.liveView = prepareForLiveView(viewController: MyViewController(model: Model()))

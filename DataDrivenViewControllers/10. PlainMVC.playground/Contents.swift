@@ -148,5 +148,5 @@ class MyViewController : UIViewController, UITableViewDelegate, UITableViewDataS
         return UITableViewCell()
     }
 }
-// Present the view controller in the Live View window
-PlaygroundPage.current.liveView = MyViewController(model: Model())
+
+PlaygroundPage.current.liveView = prepareForLiveView(viewController: MyViewController(model: Model()))

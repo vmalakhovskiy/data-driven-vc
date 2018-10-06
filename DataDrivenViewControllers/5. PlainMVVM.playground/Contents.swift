@@ -175,4 +175,4 @@ class MyViewController : UIViewController, UITableViewDelegate, UITableViewDataS
     }
 }
 
-PlaygroundPage.current.liveView = prepareForLiveView(screenType: .iPhoneSE, viewController: MyViewController(viewModel: ViewModelImpl())).0
+PlaygroundPage.current.liveView = prepareForLiveView(viewController: MyViewController(viewModel: ViewModelImpl()))
