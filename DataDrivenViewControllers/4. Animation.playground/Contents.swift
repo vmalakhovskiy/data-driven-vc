@@ -5,14 +5,7 @@ import PlaygroundSupport
 import DataDrivenViewControllersUI
 
 class MyViewController : UIViewController {
-    private enum State {
-        case initial
-        case increase
-        case decrease
-        case still
-    }
-    
-    private var state = State.initial
+    private var shouldUpdateState = false
     
     enum Props {
         case initial
@@ -21,35 +14,44 @@ class MyViewController : UIViewController {
         case still(Double)
     }
     
-    let ring = Ring(frame: CGRect(x: 60, y: 60, width: 200, height: 200))
+    lazy var ring = view.makeRingView()
     var circleAnimator: UIViewPropertyAnimator?
     
     var props: Props = .initial {
-        didSet {
-            view.setNeedsLayout()
-            state = {
-                switch props {
-                case .initial: return .initial
-                case .increase: return .increase
-                case .decrease: return .decrease
-                case .still: return .initial
+        willSet {
+            shouldUpdateState = {
+                switch (props, newValue) {
+                case (.initial, .initial): return false
+                case (.increase, .increase): return false
+                case (.decrease, .decrease): return false
+                case (.still, .still): return false
+                default: return true
                 }
             }()
         }
+        didSet {
+            view.setNeedsLayout()
+        }
+    }
+    
+    override func loadView() {
+        super.loadView()
+        
+        view.backgroundColor = .white
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
-        switch props {
-        case .initial where state != .initial:
+        switch (props, shouldUpdateState) {
+        case (.initial, true):
             ring.transform = .identity
-        case .increase(let duration) where state != .increase:
+        case (.increase(let duration), true):
             circleAnimator?.stopAnimation(true)
             circleAnimator = UIViewPropertyAnimator.runningPropertyAnimator(withDuration: duration, delay: 0, options: [.curveLinear], animations: {
                 self.ring.transform = CGAffineTransform.identity.scaledBy(x: 1.5, y: 1.5)
             }, completion: nil)
-        case .decrease(let duration) where state != .decrease:
+        case (.decrease(let duration), true):
             circleAnimator?.stopAnimation(true)
             circleAnimator = UIViewPropertyAnimator.runningPropertyAnimator(withDuration: duration, delay: 0, options: [.curveLinear], animations: {
                 self.ring.transform = CGAffineTransform.identity.scaledBy(x: 0.5, y: 0.5)
@@ -57,18 +59,38 @@ class MyViewController : UIViewController {
         default: break
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        view.addSubview(ring)
-    }
 }
 
 let vc = MyViewController()
 PlaygroundPage.current.liveView = prepareForLiveView(viewController: vc)
 
 let flow: [MyViewController.Props] = [
+    .increase(5),
+    .increase(4),
+    .increase(3),
+    .increase(2),
+    .increase(1),
+    .still(3),
+    .still(2),
+    .still(1),
+    .decrease(5),
+    .decrease(4),
+    .decrease(3),
+    .decrease(2),
+    .decrease(1),
+    .increase(5),
+    .increase(4),
+    .increase(3),
+    .increase(2),
+    .increase(1),
+    .still(3),
+    .still(2),
+    .still(1),
+    .decrease(5),
+    .decrease(4),
+    .decrease(3),
+    .decrease(2),
+    .decrease(1),
     .increase(5),
     .increase(4),
     .increase(3),

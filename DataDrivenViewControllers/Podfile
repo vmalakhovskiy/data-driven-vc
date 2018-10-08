@@ -2,8 +2,5 @@ platform :ios, '11.0'
 use_frameworks!
 
 target 'DataDrivenViewControllersUI' do
-    pod 'SwiftyMock'
-    pod 'ReactiveCocoa'
-    pod 'Nimble'
-    pod 'Quick'
+    pod 'ReactiveSwift'
 end

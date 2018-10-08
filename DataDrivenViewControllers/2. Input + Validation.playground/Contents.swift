@@ -74,8 +74,8 @@ class MyViewController : UIViewController, UITextViewDelegate {
 let vc = MyViewController()
 PlaygroundPage.current.liveView = prepareForLiveView(viewController: vc)
 
-var password = "privet"
-var confirmPassword = "privet"
+var password = "prive"
+var confirmPassword = "priveq"
 
 func makePasswordData(from text: String) -> MyViewController.Props.Data {
     return MyViewController.Props.Data(

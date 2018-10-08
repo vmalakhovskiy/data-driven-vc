@@ -76,11 +76,11 @@ public extension UIView {
     
     func makeLabel(centerXAnchorConstant: CGFloat = 0, centerYAnchorConstant: CGFloat = 0, text: String = "") -> UILabel {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = text
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 55)
         addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.centerXAnchor.constraint(equalTo: centerXAnchor, constant: centerXAnchorConstant).isActive = true
         label.centerYAnchor.constraint(equalTo: centerYAnchor, constant: centerYAnchorConstant).isActive = true
         return label
