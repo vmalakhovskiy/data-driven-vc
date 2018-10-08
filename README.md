@@ -3,6 +3,9 @@
 ## This repository contains examples of data driven view controllers.
 The main idea of data driven view controller is to separate view controller from any dependencies and provide only `needed` data to represent any possible view controller state.
 
+# Important note:
+Project contain 3-rd party dependencies, installed through cocoapods, so to make playgrounds work - please build `DataDrivenViewControllersUI` target.
+
 1. `Simple Input.playground` \
 Shows example of how to organize view with 3 buttons, where you can select profession you like.
 Also it provides you basic example of view output via optional closures, that also gives a context if action is available.
