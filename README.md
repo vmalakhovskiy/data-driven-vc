@@ -3,7 +3,12 @@
 ## This repository contains examples of data driven view controllers.
 The main idea of data driven view controller is to separate view controller from any dependencies and provide only `needed` data to represent any possible view controller state.
 
-# Important note:
+## There is also a presentation slides, that contains more teoretical info about data driven view controllers. [Link](https://speakerdeck.com/vmalakhovskiy/data-driven-view-controllers)
+
+<img src="https://github.com/vmalakhovskiy/data-driven-vc/blob/master/Resources/1.png" width="256" height="144"> <img src="https://github.com/vmalakhovskiy/data-driven-vc/blob/master/Resources/11.png" width="256" height="144"> <img src="https://github.com/vmalakhovskiy/data-driven-vc/blob/master/Resources/22.png" width="256" height="144">
+
+
+## Important note:
 Project contain 3-rd party dependencies, installed through cocoapods, so to make playgrounds work - please build `DataDrivenViewControllersUI` target.
 
 1. `Simple Input.playground` \
